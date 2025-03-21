@@ -7,8 +7,8 @@ import os
 app = Flask(__name__)
 
 # Enable CORS for the frontend domain
-# CORS(app, resources={r"/api/*": {"origins": "https://miniproject-frontend-sigma.vercel.app"}})
-CORS(app)  
+CORS(app, resources={r"/api/predict*": {"origins": "https://miniproject-frontend-sigma.vercel.app"}})
+# CORS(app)  
 
 def analyze_sentiment(text):
     analysis = TextBlob(text)
